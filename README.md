@@ -15,5 +15,5 @@ Make sure you have python3 and pip3 installed
 ### Url used for pnr status
 * https://www.confirmtkt.com/pnr-status/YOURPNRNum
 
-**For more info see code**
+**For more info**
 Check the Templates folder
