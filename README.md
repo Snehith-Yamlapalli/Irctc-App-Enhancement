@@ -13,7 +13,5 @@ Make sure you have python3 and pip3 installed
 ### Url used for pnr status
 * https://www.confirmtkt.com/pnr-status/YOURPNRNum
 for more info see code
-### Contributing
-Want to contribute to this project not limit the project to this and take it to even more heights 
-
-You are Welcome to open a PR :smiley:
+Run The *IRTC Main Page.html* to live server from your VS-Code and you can find everything from ,
+This is just a front-end model.
