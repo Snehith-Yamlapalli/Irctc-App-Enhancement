@@ -5,6 +5,8 @@ This project mainly try something new to get juicy info out of Api provided by g
 Make sure you have python3 and pip3 installed
 - Run ```pip3 install -r requirements.txt```
 - Run ```python3 app.py```
+- Go to the templates folder and run the **IRCTC Main Page.html** with live server.
+
 
 ### Apis used for fetching station data
 * https://api.railyatri.in/api/common_city_station_search.json
@@ -14,5 +16,4 @@ Make sure you have python3 and pip3 installed
 * https://www.confirmtkt.com/pnr-status/YOURPNRNum
 
 **For more info see code**
-Run The **IRTC Main Page.html** (in the **templates folder**) to live server from your VS-Code and you can find everything from.
-This is just a front-end model.
+Check the Templates folder
