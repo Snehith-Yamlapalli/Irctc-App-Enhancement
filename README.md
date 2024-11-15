@@ -5,7 +5,7 @@ For termux users we have dedicated documentation [here](https://github.com/lsnnt
 
 Make sure you have python3 and pip3 installed
 - Run ```pip3 install -r requirements.txt```
-- Run ```python3 main.py```
+- Run ```python3 app.py```
 ### Apis used for fetching station data
 * https://api.railyatri.in/api/common_city_station_search.json
 ### Api used for train details
