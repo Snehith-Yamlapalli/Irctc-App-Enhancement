@@ -13,6 +13,6 @@ Make sure you have python3 and pip3 installed
 ### Url used for pnr status
 * https://www.confirmtkt.com/pnr-status/YOURPNRNum
 
-**for more info see code**
+**For more info see code**
 Run The **IRTC Main Page.html** (in the **templates folder**) to live server from your VS-Code and you can find everything from.
 This is just a front-end model.
