@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+
+        #part2 {
+            padding-top: 5px;
+        }
+
+        label {
+            vertical-align: middle;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+        #inner1 {
+            background-color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+
+        #Existing {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 250px;
+            top: 210px;
+            cursor: pointer;
+        }
+
+        #Email1,
+        #Email2 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            cursor: pointer;
+        }
+
+        #Email1 {
+            left: 100px;
+            top: 300px;
+        }
+
+        #emailinp1,
+        #emailinp2 {
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            border-radius: 3px;
+        }
+
+        #emailinp1 {
+            left: 250px;
+            top: 298px;
+        }
+
+        #password1,
+        #password2,
+        #password3 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(251, 251, 251);
+            cursor: pointer;
+        }
+
+        #password1 {
+            position:absolute;
+            left: 100px;
+            top: 360px;
+        }
+
+        #passwordinp1 
+        {
+            position:absolute;
+            left: 250px;
+            top: 358px;
+            height: 40px;
+            width:300px;
+        }
+
+        #passwordinp2 
+        {
+            position:absolute;
+            left: 250px;
+            top: 560px;
+            height: 40px;
+            width:300px;
+        }
+
+        #passwordinp3 {
+            position:absolute;
+            left: 250px;
+            top: 630px;
+            height: 40px;
+            width:300px;
+        }
+
+        #Continue {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 280px;
+            top: 700px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <form id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+
+        <div id="Existing">Existing User</div>
+
+        <label for="emailinp1" id="Email1">Email :</label>
+        <input type="email" id="emailinp1" required>
+
+        <label for="passwordinp1" id="password1">Password :</label>
+        <input type="password" id="passwordinp1" required>
+
+        <!-- New User Section -->
+        <div id="new-user">New User</div>
+
+        <label for="emailinp2" id="Email2">Email :</label>
+        <input type="email" id="emailinp2" required>
+
+        <label for="passwordinp2" id="password2">Password :</label>
+        <input type="password" id="passwordinp2" required>
+
+        <label for="passwordinp3" id="password3">Re-enter Password :</label>
+        <input type="password" id="passwordinp3" required>
+
+        <button type="submit" id="Continue">Continue</button>
+    </form>
+
+    <script>
+        let logintag = false;
+        document.getElementById('part2').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('emailinp1').value;
+            localStorage.setItem('userEmail', email);
+
+            window.location.href = 'IRCTC_Main_Page.html';
+        });
+    </script>
+
+</body>
+
+</html>

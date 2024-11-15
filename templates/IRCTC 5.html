@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+            cursor:default;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+            cursor:default;
+        }
+
+        .icon {
+            color: rgb(32, 32, 101);
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            cursor: pointer;
+        }
+
+        #back {
+            position: absolute;
+            left: 230px;
+            top: 600px;
+        }
+        .trinicon{
+            color: rgb(32, 32, 101);
+            height: 40px;
+            width: 100px;
+            border-radius: 24px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(77, 73, 70);
+            cursor: pointer;
+            color: rgb(212, 226, 239);
+        }
+        #trainDetails{
+            font-size: 34px;
+            position: absolute;
+            width: 550px;
+            left: 30px;
+            top: 100px;
+            height: 70px;
+            cursor:default;
+        }
+        #start{
+            position: absolute;
+            left: 50px;
+            top:200px;
+            height: 60px;
+            width: 120px;
+            cursor:default;
+        }
+        #end{
+            position: absolute;
+            left: 450px;
+            top:200px;
+            height: 60px;
+            width: 120px;
+            cursor:default;
+        }
+        #Time{
+            position: absolute;
+            left: 200px;
+            top:200px;
+            height: 60px;
+            width: 220px;
+            cursor:default;
+        }
+        #Tier1{
+            position: absolute;
+            left: 90px;
+            top:330px;
+            height: 50px;
+            width: 100px;
+      
+        }
+        #Vacancy1{
+            position: absolute;
+            left: 290px;
+            top:310px;
+            height: 50px;
+            width: 100px;
+            cursor:default;
+        }
+        #fare1{
+            position: absolute;
+            left: 440px;
+            top:310px;
+            height: 50px;
+            width: 250px;
+            cursor:pointer;
+        }
+        #Tier2{
+            position: absolute;
+            left: 90px;
+            top:400px;
+            height: 50px;
+            width: 100px;
+        }
+        #Vacancy2{
+            position: absolute;
+            left: 290px;
+            top:380px;
+            height: 50px;
+            width: 100px;
+            cursor:default;
+        }
+        #fare2{
+            position: absolute;
+            left: 440px;
+            top:380px;
+            height: 50px;
+            width: 250px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <div id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+        <p class="trinicon" id="trainDetails"></p>
+        <p class="trinicon" id="start"></p>
+        <p class="trinicon" id="end"></p>
+        <p class="trinicon" id="Time"></p>
+        <div class="icon" id="Tier1">Sleeper :</div>   <p class="icon" id="Vacancy1"></p> <p class="icon" id="fare1">Click here to Continue</p>
+        <div class="icon" id="Tier2">AC :</div>        <p class="icon" id="Vacancy2"></p> <p class="icon" id="fare2">Click here to Continue</p>
+        <div class="icon" id="back">back</div>
+    </div>
+
+    <script>
+        document.getElementById("back").addEventListener("click", function () {
+            window.location.href = "IRCTC 3.html";
+        });
+        document.getElementById("fare1").addEventListener("click", function () {
+    // Store the required details in localStorage
+             localStorage.setItem("selectedTier", "Sleeper");
+            localStorage.setItem("trainNumber", trainNumber);
+            localStorage.setItem("trainName", trainName);
+            localStorage.setItem("startTime", startTime);
+            localStorage.setItem("endTime", endTime);
+            localStorage.setItem("totalTime", totalTime);
+            localStorage.setItem("seatsSleeper", seatsSleeper);
+ 
+            window.location.href = "Sleeper Coach.html"; // Update with your actual destination
+        });
+        document.getElementById("fare2").addEventListener("click", function () {
+    // Store the required details in localStorage
+             localStorage.setItem("selectedTier", "Sleeper");
+            localStorage.setItem("trainNumber", trainNumber);
+            localStorage.setItem("trainName", trainName);
+            localStorage.setItem("startTime", startTime);
+            localStorage.setItem("endTime", endTime);
+            localStorage.setItem("totalTime", totalTime);
+            localStorage.setItem("seatsSleeper", seatsAC1);
+ 
+            window.location.href = "AC Coach.html"; // Update with your actual destination
+        });
+       
+        const trainNumber = localStorage.getItem("trainNumber");
+        const trainName = localStorage.getItem("trainName");
+        const seatsSleeper = localStorage.getItem("seatsSleeper");
+        const seatsAC1 = localStorage.getItem("seatsAC1");
+        const startTime = localStorage.getItem("startTime");
+        const totalTime = localStorage.getItem("totalTime");
+        const endTime = localStorage.getItem("endTime");
+        // Display train information
+        document.getElementById("trainDetails").innerText = ` ${trainNumber} :: ${trainName}\n`;
+        document.getElementById("start").innerText = ` ${startTime}`;
+        document.getElementById("end").innerText = ` ${endTime}`;
+        document.getElementById("Time").innerText = ` ${totalTime}`;
+        document.getElementById("Vacancy1").innerText = ` ${seatsSleeper}`;
+        document.getElementById("Vacancy2").innerText = ` ${seatsAC1}`;
+           
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+
+        .train {
+            background-color: rgb(255, 255, 255);
+            height: 20px;
+            font-size: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .trains {
+            background-color: rgb(229, 220, 220);
+            height: 40px;
+            padding: 12px 24px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Bree Serif', serif;
+            vertical-align: middle;
+            font-size: 30px;
+        }
+
+        #part2 {
+            padding-top: 5px;
+        }
+
+        #inner1 {
+            background-color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+
+        #Trainbox {
+            background-color: crimson;
+        }
+
+        #login {
+            position: absolute;
+            left: 1200px;
+            top: 50px;
+            font-size: 24px;
+            height: 40px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(242, 244, 248);
+        }
+        #trainstatus {
+            position: absolute;
+            left: 150px;
+            top: 50px;
+            font-size: 24px;
+            height: 40px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(242, 244, 248);
+        }
+        .icon {
+            font-size: 24px;
+            height: 40px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(227, 230, 235);
+        }
+
+        #pnr {
+            position: absolute;
+            top: 250px;
+            left: 100px;
+            width: 200px;
+        }
+
+        #chart {
+            position: absolute;
+            left: 350px;
+            top: 250px;
+            width: 200px;
+        }
+
+        #from {
+            position: absolute;
+            left: 100px;
+            top: 330px;
+            width: 100px;
+        }
+
+        #to {
+            position: absolute;
+            left: 100px;
+            top: 400px;
+            width: 100px;
+        }
+
+        #date {
+            position: absolute;
+            left: 100px;
+            top: 480px;
+        }
+
+        #Class {
+            position: absolute;
+            left: 100px;
+            top: 550px;
+        }
+
+        .inp {
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            border-radius: 3px;
+        }
+
+        #frominp {
+            position: absolute;
+            left: 300px;
+            top: 330px;
+        }
+
+        #toinp {
+            position: absolute;
+            left: 300px;
+            top: 400px;
+        }
+
+        #dateinp {
+            position: absolute;
+            left: 300px;
+            top: 480px;
+        }
+
+        #classinp {
+            position: absolute;
+            left: 300px;
+            top: 550px;
+        }
+
+        #Continue {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 200px;
+            top: 650px;
+            cursor: pointer;
+        }
+        #Notification{
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 200px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 350px;
+            top: 650px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+        <div id="login">login / Sign Up</div>
+        <div id="trainstatus">Running Train Status</div>
+    </div>
+
+    <div id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1525" height="610">
+        <div id="mainbox">
+            <div id="pnr" class="icon">Pnr Status</div>
+            <div id="chart" class="icon">Chart Vacancy</div>
+            <div id="from" class="icon">From</div>
+            <div id="to" class="icon">To</div>
+            <div id="date" class="icon">Date</div>
+            <div id="Class" class="icon">Class</div>
+
+            <input type="text" id="frominp" class="inp">
+            <input type="text" id="toinp" class="inp">
+            <input type="date" id="dateinp" class="inp">
+            <input type="text" id="classinp" class="inp" oninput="validateInput()">
+            <div id="Continue">Continue</div>
+            <div id="Notification">Notification Page</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        window.onload = function() 
+        {
+            localStorage.clear();
+        };
+        var email = localStorage.getItem('userEmail');
+
+        if (email) {
+            document.getElementById('login').textContent = email;
+        } else {
+            document.getElementById('login').textContent = 'Log in / Sign Up';
+        }
+
+
+        document.getElementById("login").addEventListener("click", function () 
+        {
+            window.location.href = "login.html";
+        });
+        document.getElementById("Continue").addEventListener("click", function () {
+            if(email)
+            window.location.href = "IRCTC 2.html";
+            else {
+            // If email is not entered, show an alert or take another action
+            alert("Please Login to continue.");
+        }
+        });
+        document.getElementById("pnr").addEventListener("click", function () {
+            window.location.href = "http://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html?locale=en";
+        });
+        document.getElementById("chart").addEventListener("click", function () {
+            window.location.href = "https://www.irctc.co.in/online-charts/";
+        });
+        document.getElementById("trainstatus").addEventListener("click", function () {
+            window.location.href = "http://127.0.0.1:5000/";
+        });
+        document.getElementById("Notification").addEventListener("click", function () {
+            alert("This provides Notification is sent to passenger");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+
+        
+        #part2 {
+            padding-top: 5px;
+        }
+
+        label {
+            vertical-align: middle;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+        #inner1 {
+            background-color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+        #Existing {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 250px;
+            top: 210px;
+            cursor: pointer;
+        }
+
+        #Email1 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 100px;
+            top: 300px;
+            cursor: pointer;
+        }
+        #emailinp1{
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            left: 250px;
+            top: 298px;
+            border-radius: 3px;
+        }
+        #password1 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(251, 251, 251);
+            left: 100px;
+            top: 360px;
+            cursor: pointer;
+        }
+        #passwordinp1{
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            left: 250px;
+            top: 358px;
+            border-radius: 3px;
+        }
+        #new-user {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 280px;
+            top: 450px;
+            cursor: pointer;
+        }
+        #Email2 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 100px;
+            top: 510px;
+            cursor: pointer;
+        }
+        #emailinp2{
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            left: 250px;
+            top: 510px;
+            border-radius: 3px;
+        }
+        #password2 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 120px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(251, 251, 251);
+            left: 100px;
+            top: 570px;
+            cursor: pointer;
+        }
+        #passwordinp2{
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            left: 250px;
+            top: 570px;
+            border-radius: 3px;
+        }
+        #password3 {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 180px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(251, 251, 251);
+            left: 40px;
+            top: 628px;
+            cursor: pointer;
+        }
+        #passwordinp3{
+            font-size: 20px;
+            height: 38px;
+            width: 300px;
+            position: absolute;
+            left: 250px;
+            top: 628px;
+            border-radius: 3px;
+        }
+        #Continue {
+            color: rgb(32, 32, 101);
+            position: absolute;
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            left: 280px;
+            top: 700px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <form id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+
+        <div id="Existing">Existing User</div>
+
+        <label for="emailinp1" id="Email1">Email :</label>
+        <input type="email" id="emailinp1">
+
+        <label for="passwordinp1" id="password1">Password :</label>
+        <input type="password" id="passwordinp1">
+
+        <!-- New User Section -->
+        <div id="new-user">New User</div>
+
+        <label for="emailinp2" id="Email2">Email :</label>
+        <input type="email" id="emailinp2">
+
+        <label for="passwordinp2" id="password2">Password :</label>
+        <input type="password" id="passwordinp2">
+
+        <label for="passwordinp3" id="password3">Re-enter Password :</label>
+        <input type="password" id="passwordinp3">
+
+        <button type="submit" id="Continue">Continue</button>
+    </form>
+
+    <script>
+        document.getElementById('part2').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var email1 = document.getElementById('emailinp1').value;
+            var password1 = document.getElementById('passwordinp1').value;
+
+            var email2 = document.getElementById('emailinp2').value;
+            var password2 = document.getElementById('passwordinp2').value;
+            var password3 = document.getElementById('passwordinp3').value;
+
+            // If Existing User section is filled
+            if (email1 && password1) {
+                // Existing User details filled, skip New User section
+                localStorage.setItem('userEmail', email1);
+                window.location.href = 'IRCTC Main Page.html';
+            }
+            // If New User section is filled
+            else if (email2 && password2 && password3) {
+                // Ensure passwords match
+                if (password2 !== password3) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+                localStorage.setItem('newUserEmail', email2);
+                window.location.href = 'IRCTC Main Page.html';
+            } else {
+                // Neither section is fully filled
+                alert('Please fill in either the Existing User or New User section.');
+            }
+        });
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Seat Arrangement</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(10, 80, 203);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+
+        #login {
+            position: absolute;
+            left: 1200px;
+            top: 50px;
+            font-size: 24px;
+            height: 40px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(242, 244, 248);
+        }
+
+        #seatingArrangement {
+            position: absolute;
+            top: 350px;
+            left: 50px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #a0a0f6;
+            /* Blue background */
+            margin: 0;
+            padding: 20px;
+        }
+
+
+        #part2 {
+            position: absolute;
+            margin: 0px;
+            background-color: #fdfdfd;
+            height: 118px;
+            width: 1490px;
+            border-radius: 10px;
+            border: 3px solid rgb(52, 43, 44);
+        }
+
+        .compartments {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .compartment {
+            margin: 5px;
+            padding: 0px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            width: 150px;
+            background-color: #f9f9f9;
+        }
+
+        .seat {
+            display: inline-block;
+            width: 45px;
+            height: 40px;
+            margin: 5px;
+            background-color: #e0e0e0;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .icon {
+            font-size: 24px;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(242, 244, 248);
+            position: absolute;
+            left: 350px;
+            top: 50px;
+        }
+
+        #S2 {
+            position: absolute;
+            left: 450px;
+        }
+
+        #S3 {
+            position: absolute;
+            left: 550px;
+        }
+
+        #S4 {
+            position: absolute;
+            left: 650px;
+        }
+
+        #S5 {
+            position: absolute;
+            left: 750px;
+        }
+
+        #S6 {
+            position: absolute;
+            left: 850px;
+        }
+
+        #S7 {
+            position: absolute;
+            left: 950px;
+        }
+
+        #S8 {
+            position: absolute;
+            left: 1050px;
+        }
+
+        #S9 {
+            position: absolute;
+            left: 1150px;
+        }
+
+        .occupied {
+            background-color: #fc515f;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        .selected {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .side-berth {
+            width: 65px;
+        }
+        #back {
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+        #coach{
+            position: absolute;
+            top:30px;
+            width: 150px;
+            left: 150px;
+            height: 60px;
+            cursor:default;
+        }
+        #book {
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            position: absolute;
+            left: 1300px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <!-- Coach selection area -->
+    <div id="part2">
+        <div class="icon" id="coach">AC Coach</div>
+        <button id="S3" class="icon" onclick="handleCoachClick(0)">S1</button>
+        <button id="S4" class="icon" onclick="handleCoachClick(1)">S2</button>
+        <button id="S5" class="icon" onclick="handleCoachClick(2)">S3</button>
+        <button id="S6" class="icon" onclick="handleCoachClick(3)">S4</button>
+        <button id="S7" class="icon" onclick="handleCoachClick(4)">S5</button>
+      
+    </div>
+
+    <div class="compartments" id="seatingArrangement"></div>
+    <div class="icon" id="book">Book</div>
+    <div class="icon" id="back">back</div>
+    <script>
+        let totaloccupied = 0;
+        // Predefined occupied seats for each coach
+        const compartmentOccupiedSeats = [
+            [1, 2, 14, 45, 67, 23, 55, 3, 14, 58, 72, 30, 47, 19, 1, 38, 63, 21, 26, 55, 34, 11, 48, 35, 7, 31, 52, 61, 46, 5, 43, 64, 2, 9, 18, 69, 16, 36, 12, 60, 32, 15, 29],       // S1 
+            [1, 2, 14, 45, 67, 23, 55, 10, 12, 15], // S2 
+            [34, 12, 58, 21, 44, 66, 4, 17, 29, 8, 39, 49, 25, 70, 15, 1, 36, 68, 11, 20, 61, 32, 57, 48, 5, 63, 14, 50, 72, 23, 26, 41, 18, 33, 64, 3, 60, 45, 2, 46, 9, 38, 24, 62, 7, 27, 40, 16, 65, 30], // S3 
+            [52, 26, 35, 17, 45, 33, 59, 10, 42, 31, 49, 1, 67, 27, 3, 47, 36, 2, 64, 6, 70, 68, 19, 62, 46, 39, 71, 44, 54, 65, 29, 51, 23, 56, 63, 58], // S4 
+            [3, 14, 58, 72, 30, 47, 19, 1, 38, 63, 21, 26, 55, 34, 11, 48, 35, 7, 31, 52, 61, 46, 5, 43, 64, 2, 9, 18, 69, 16, 36, 12, 60, 32, 15, 29], // S5 
+           ];
+
+        // Function to display seats for the selected coach
+        function handleCoachClick(coachIndex) {
+            const seatingArrangement = document.getElementById("seatingArrangement");
+            seatingArrangement.innerHTML = ''; // Clear previous seats
+
+            const seatsPerCompartment = 8; // Seats per compartment
+
+            for (let i = 0; i < 9; i++) { // 9 compartments per coach
+                const compartmentDiv = document.createElement("div");
+                compartmentDiv.classList.add("compartment");
+                compartmentDiv.innerHTML = `<h3>Compartment ${i + 1}</h3>`;
+
+                for (let j = 0; j < seatsPerCompartment; j++) {
+                    const seatNumber = i * seatsPerCompartment + j + 1;
+                    const seatDiv = document.createElement("div");
+                    seatDiv.classList.add("seat");
+                    seatDiv.textContent = seatNumber;
+
+                    // Check for side berths and add a special class
+                    if ([7, 8, 15, 16, 23, 24, 31, 32, 39, 40, 47, 48, 55, 56, 63, 64, 71, 72].includes(seatNumber)) {
+                        seatDiv.classList.add("side-berth");
+                    }
+
+                    if (compartmentOccupiedSeats[coachIndex].includes(seatNumber)) {
+                        seatDiv.classList.add("occupied");
+                    } else {
+                        seatDiv.addEventListener("click", function () 
+                        {
+                            if(seatDiv.classList.contains("occupied")) alert("This seat already occupied");
+                            if (seatDiv.classList.contains("selected")) 
+                            {
+                                seatDiv.classList.remove("selected");
+                                totaloccupied -= 1;
+                            } else {
+                                // If seat is not selected, check if the limit has been reached
+                                if (totaloccupied < 12) {
+                                    seatDiv.classList.add("selected");
+                                    totaloccupied += 1;
+                                } else {
+                                    alert("You can select a maximum of 12 seats.");
+                                }
+                            }
+                        });
+                    }
+
+                    compartmentDiv.appendChild(seatDiv);
+                }
+
+                seatingArrangement.appendChild(compartmentDiv);
+            }
+        }
+        document.getElementById("back").addEventListener("click", function () {
+            window.location.href = "IRCTC 5.html";
+        });
+        document.getElementById("book").addEventListener("click", function () {
+            if (totaloccupied == 0) {
+                alert("Please select your seats");
+            } else {
+                alert("Successfully Upgraded your ticket");
+                // Change selected seats to occupied
+                const selectedSeats = document.querySelectorAll(".seat.selected");
+                selectedSeats.forEach((seat) => {
+                    seat.classList.remove("selected");
+                    seat.classList.add("occupied");
+                });
+                // Reset totaloccupied count after booking
+                totaloccupied = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

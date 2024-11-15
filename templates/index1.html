@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Status App</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(10, 80, 203);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+        #maintext {
+            font-size: 40px;
+        }
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #a7a7ef;
+            margin: 0;
+            padding: 20px;
+        }
+        label {
+            font-size: 16px;
+            color: #333333;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            width: 150px;
+        }#back {
+            position: absolute;
+            left: 150px;
+            top: 50px;
+            font-size: 24px;
+            height: 40px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: rgb(242, 244, 248);
+        }
+
+        input, select, button {
+            padding: 5px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        #result {
+            position: absolute;
+            top:400px;
+            left:300px;
+            width: 900px;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            word-break: break-word;
+        }
+
+        .result-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .result-item span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .result-item .value {
+            font-weight: normal;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon" id="back">back</div>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+        <!-- <img src="WP2.jpg" alt="backgroundpic" width="1525" height="610"> -->
+    <h1>IRCTC Train Status</h1>
+    <form id="status-form" method="POST">
+        <label for="train_no">Train Number:</label>
+        <input type="text" id="train_no" name="train_no" required>
+        <br><br>
+<!-- 
+        <label for="date">Date (dd-mm-yyyy):</label>
+        <input type="text" id="date" name="date" placeholder="Leave blank for today">
+        <br><br> -->
+
+        <label for="action">Select Action:</label>
+        <select id="action" name="action">
+            <option value="1">Source, Current, Next, Destination</option>
+            <option value="2">Platform Information</option>
+            <option value="3">Delay Information</option>
+            <option value="4">PNR Details</option>
+            <option value="5">Full JSON Response</option>
+        </select><br><br>
+
+        <!-- <div id="extra-inputs">
+            <label for="station_code">Station Code (if needed):</label>
+            <input type="text" id="station_code" name="station_code">
+            <br>
+            <label for="pnr">PNR (if needed):</label>
+            <input type="text" id="pnr" name="pnr">
+        </div> -->
+        
+        <button type="button" onclick="getStatus()">Submit</button>
+    </form>
+
+    <h2>Result:</h2>
+    <div id="result"></div>
+
+    <script>
+        async function getStatus() {
+            const form = document.getElementById("status-form");
+            const formData = new FormData(form);
+            const response = await fetch("/getstatus", {
+                method: "POST",
+                body: formData
+            });
+            const result = await response.json();
+            document.getElementById("result").innerHTML = JSON.stringify(result, null, 2);
+        }
+        document.getElementById("back").addEventListener("click", function () {
+            alert("hello world");
+        });
+    </script>
+</body>
+</html>

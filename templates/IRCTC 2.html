@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        #part2 {
+            padding-top: 5px;
+        }
+        #inner1 {
+            background-color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+        .icon{
+            color: rgb(32, 32, 101);
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+        }
+        #back {
+            position: absolute;
+            left: 230px;
+            top: 700px;
+            cursor: pointer;
+        }
+        #f1{
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            width: 400px;
+            cursor: pointer;
+        }
+        #or{
+            position: absolute;
+            left:250px;
+            top: 420px;
+            width: 100px;
+        }
+        #pnrnum{
+            position:absolute;
+            top:500px;
+            left:100px;
+            width :200px;
+            cursor: pointer;
+        }
+        #f2{
+            position: absolute;
+            left: 100px;
+            top: 600px;
+            width: 400px;
+            cursor: pointer;
+        }
+        #pnrinp{
+            position: absolute;
+            top:550px;
+            left:100px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <div id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+        <div class="icon" id="f1">Book Ticket</div>
+
+        <div class="icon" id="or">Or</div>
+
+        <label for="pnrinp" class="icon" id="pnrnum">Enter Pnr Number :</label>
+        <input type="text" id="pnrinp" class="icon">
+
+        <div class="icon" id="f2">Upgrade Ticket</div>
+        <div class="icon" id="back">back</div>
+    </div>
+
+    <script>
+        const initialPNRNumbers = [
+            "1111111111",
+            "2222222222",
+            "3333333333",
+            "4444444444",
+            "5555555555",
+            "6666666666",
+            "7777777777",
+            "8888888888"
+        ];
+
+        document.getElementById("back").addEventListener("click", function () {
+            window.location.href = "IRCTC Main Page.html";
+        });
+        document.getElementById("f1").addEventListener("click", function () {
+            window.location.href = "IRCTC 3.html";
+        });
+        document.getElementById("f2").addEventListener("click", function () {
+            const enteredPNR = document.getElementById("pnrinp").value;
+            if (initialPNRNumbers.includes(enteredPNR)) 
+            {
+                window.location.href = "IRCTC 4.html";
+            } else {
+                alert("Error: PNR number not found");
+            }
+        });
+    </script>
+</body>
+
+</html>

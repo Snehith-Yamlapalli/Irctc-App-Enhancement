@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+
+        .icon {
+            color: rgb(32, 32, 101);
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            cursor: pointer;
+        }
+
+        #back {
+            position: absolute;
+            left: 230px;
+            top: 690px;
+        }
+        #train1{
+            position: absolute;
+            left: 100px;
+            top: 250px;
+            width: 400px;
+        }
+       
+        
+        #train2{
+            position: absolute;
+            left: 100px;
+            top: 300px;
+            width: 400px;
+        }
+        
+        #train3{
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            width: 400px;
+        }
+       
+        #train4{
+            position: absolute;
+            left: 100px;
+            top: 400px;
+            width: 400px;
+        }
+       
+        #train5{
+            position: absolute;
+            left: 100px;
+            top: 450px;
+            width: 400px;
+        }
+        
+        #train6{
+            position: absolute;
+            left: 100px;
+            top: 500px;
+            width: 400px;
+        }
+       
+        #train7{
+            position: absolute;
+            left: 100px;
+            top: 550px;
+            width: 400px;
+        }
+        #train8{
+            position: absolute;
+            left: 100px;
+            top: 600px;
+            width: 400px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <div id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+        <div class="icon" id="back">back</div>
+        <div id="train1" class="icon" onclick="selectTrain('12727', 'Godavari Express', 100, 50, '09:00 AM', '13 hours',)">12727 :: Godavari Express</div>
+        <div id="train2" class="icon" onclick="selectTrain('12704', 'Falaknuma Express', 80, 40, '10:30 AM', '12 hours 30 minutes')">12704 :: Falaknuma Express</div>
+        <div id="train3" class="icon" onclick="selectTrain('12285', 'Duronto Express', 120, 60, '08:00 AM', '9 hours')">12285 :: Duronto Express</div>
+        <div id="train4" class="icon" onclick="selectTrain('12805', 'Janmabhoomi Express', 90, 45, '11:00 AM', '10 hours 15 minutes')">12805 :: Janmabhoomi Express</div>
+        <div id="train5" class="icon" onclick="selectTrain('11019', 'Konark Express', 110, 55, '12:00 PM', '9 hours 45 minutes')">11019 :: Konark Express</div>
+        <div id="train6" class="icon" onclick="selectTrain('17016', 'Visakha Express', 70, 35, '02:00 PM', '8 hours 20 minutes')">17016 :: Visakha Express</div>
+        <div id="train7" class="icon" onclick="selectTrain('12713', 'Satavahana Express', 85, 42, '03:15 PM', '8 hours 50 minutes')">12713 :: Satavahana Express</div>
+        <div id="train8" class="icon" onclick="selectTrain('17240', 'Simhadri Express', 95, 47, '01:30 PM', '11 hours 10 minutes')">17240 :: Simhadri Express</div>
+    </div>
+
+    <script>
+        document.getElementById("back").addEventListener("click", function () {
+            window.location.href = "IRCTC 2.html";
+        });
+        function selectTrain(trainNumber, trainName, seatsSleeper, seatsAC1, startTime, totalTime) {
+            // Calculate end time based on total time
+            const endTime = calculateEndTime(startTime, totalTime);
+
+            // Store train details in local storage
+            localStorage.setItem("trainNumber", trainNumber);
+            localStorage.setItem("trainName", trainName);
+            localStorage.setItem("seatsSleeper", seatsSleeper);
+            localStorage.setItem("seatsAC1", seatsAC1);
+            localStorage.setItem("startTime", startTime);
+            localStorage.setItem("totalTime", totalTime);
+            localStorage.setItem("endTime", endTime);
+            window.location.href = "IRCTC 5.html";
+        }
+        function calculateEndTime(startTime, totalTime) {
+    
+    const startHour = parseInt(startTime.substr(0, startTime.indexOf(':')), 10);
+    const startMinute = parseInt(startTime.substr(startTime.indexOf(':') + 1, 2), 10);
+    let totalHours = 0;
+    let totalMinutes = 0;
+
+    const totalTimeParts = totalTime.split(' ');
+    for (let i = 0; i < totalTimeParts.length; i++) {
+        if (totalTimeParts[i].includes('hour')) {
+            totalHours += parseInt(totalTimeParts[i - 1]) || 0;
+        } else if (totalTimeParts[i].includes('minute')) {
+            totalMinutes += parseInt(totalTimeParts[i - 1]) || 0;
+        }
+    }
+
+    // Calculate the end time
+    let endHour = startHour + totalHours;
+    let endMinute = startMinute + totalMinutes;
+
+    // Adjust for overflow
+    if (endMinute >= 60) {
+        endHour += Math.floor(endMinute / 60);
+        endMinute = endMinute % 60;
+    }
+
+    // Format the end time
+    const formattedEndTime = `${endHour % 24}:${endMinute < 10 ? '0' : ''}${endMinute} ${endHour >= 12 ? 'PM' : 'AM'}`;
+    return formattedEndTime;
+}
+
+    </script>
+</body>
+
+</html>

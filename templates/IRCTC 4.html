@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC PROJECT</title>
+    <style>
+        #part1 {
+            text-align: center;
+            border: 2px solid rgb(0, 10, 146);
+            border-radius: 10px;
+            font-size: larger;
+            background-color: rgb(92, 136, 211);
+            height: 100px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #maintext {
+            font-size: 40px;
+        }
+
+        #secondtext {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        .icon{
+            color: rgb(32, 32, 101);
+            height: 40px;
+            width: 100px;
+            border-radius: 4px;
+            display: flex;
+            font-size: 20px;
+            font-family: 'Bree Serif', serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 252, 252);
+            cursor: pointer;
+        }
+        
+        #back {
+            position: absolute;
+            left: 230px;
+            top: 600px;
+        } #sel{
+            position: absolute;
+            left: 90px;
+            top:250px;
+            height: 50px;
+            width: 430px;
+            cursor:default;
+        }
+         #Tier1{
+            position: absolute;
+            left: 90px;
+            top:330px;
+            height: 50px;
+            width: 130px;
+      
+        }
+        #Vacancy1{
+            position: absolute;
+            left: 290px;
+            top:310px;
+            height: 50px;
+            width: 150px;
+            cursor:default;
+        }
+        #fare1{
+            position: absolute;
+            left: 490px;
+            top:310px;
+            height: 50px;
+            width: 150px;
+            cursor:default;
+        }
+        #Tier2{
+            position: absolute;
+            left: 90px;
+            top:400px;
+            height: 50px;
+            width: 130px;
+        }
+        #Vacancy2{
+            position: absolute;
+            left: 290px;
+            top:380px;
+            height: 50px;
+            width: 150px;
+            cursor:default;
+        }
+        #fare2{
+            position: absolute;
+            left: 490px;
+            top:380px;
+            height: 50px;
+            width: 150px;
+            cursor:default;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div id="part1">
+        <div id="maintext">Indian Railways</div>
+        <div id="secondtext"> Safety | Security | Punctuality </div>
+    </div>
+
+    <div id="part2">
+        <img src="WP2.jpg" alt="backgroundpic" width="1500" height="635">
+        <div class="icon" id="sel">Please Select your desired Tier</div>
+        <div class="icon" id="Tier1">AC Tier 1 :</div>  <p class="icon" id="Vacancy1">Availabe : 20</p> <p class="icon" id="fare1">  Fare : Rs330</p>
+        <div class="icon" id="Tier2">AC Tier 2:</div>  <p class="icon" id="Vacancy2">Availabe : 30</p> <p class="icon" id="fare2">Fare : Rs180</p>
+        
+        <div class="icon" id="back">back</div>
+    </div>
+
+    <script>
+        document.getElementById("back").addEventListener("click", function () {
+            window.location.href = "IRCTC 2.html";
+        });
+        document.getElementById("Tier1").addEventListener("click", function () {
+            window.location.href = "AC Coach copy.html";
+        });
+        document.getElementById("Tier2").addEventListener("click", function () {
+            window.location.href = "AC Coach copy.html";
+        });
+    </script>
+</body>
+
+</html>
