@@ -265,7 +265,7 @@
             if (email1 && password1) {
                 // Existing User details filled, skip New User section
                 localStorage.setItem('userEmail', email1);
-                window.location.href = 'IRCTC Main Page.html';
+                window.location.href = '../index.html.html';
             }
             // If New User section is filled
             else if (email2 && password2 && password3) {
@@ -275,7 +275,7 @@
                     return;
                 }
                 localStorage.setItem('newUserEmail', email2);
-                window.location.href = 'IRCTC Main Page.html';
+                window.location.href = '../index.html';
             } else {
                 // Neither section is fully filled
                 alert('Please fill in either the Existing User or New User section.');
