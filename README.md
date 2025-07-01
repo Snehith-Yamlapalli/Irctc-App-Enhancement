@@ -11,23 +11,5 @@ The project aims to upgrade the IRCTC application by enhancing its booking capac
  these upgrades, the IRCTC app is positioned to deliver a more reliable
  and satisfying user experience, leading to improved customer satisfaction**
 
-### How to run the code
-
-Make sure you have python3 and pip3 installed
-- Run ```pip3 install -r requirements.txt```
-- Run ```python3 app.py```
-- Go to the templates folder and run the **IRCTC Main Page.html** with live server.
-
-
-### Apis used for fetching station data
-* https://api.railyatri.in/api/common_city_station_search.json
-### Api used for train details
-* https://whereismytrain.in/cache/live_status?train_no=TRAINNO&date=DATE(in dd-mm-yyyy format)&lang=hi
-### Url used for pnr status
-* https://www.confirmtkt.com/pnr-status/YOURPNRNum
-
-**For more info**
-Check the Templates folder
-
 
 https://snehith-yamlapalli.github.io/Irctc-App-Enhancement/
